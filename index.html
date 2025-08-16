@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夢小説リンクページ</title>
+
+<!-- 検索避け厳重 -->
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="googlebot" content="noindex,nofollow,noarchive">
+
+<!-- pixiv風読みやすさ・リンク色・余白・行間 -->
+<style>
+  body {
+    font-family: "Hiragino Kaku Gothic Pro","Meiryo","sans-serif";
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 10px 15px 10px 22px;
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 0.02em;
+  }
+  h1 { margin-bottom: 1em; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 0.5em; }
+  a { color:#008b8b; text-decoration:none; }
+  a:hover { text-decoration:underline; }
+</style>
+
+<!-- 名前変換用JavaScript -->
+<script>
+let userName = "";
+function setName() {
+  if (!userName) {
+    userName = prompt("ここで名前を入力してね（未成年は入れません！）");
+    if(!userName) userName="名無し"; // 入力キャンセル時の安全策
+  }
+  document.querySelectorAll('.name-placeholder').forEach(el => el.textContent = userName);
+}
+function goToNovel(link) {
+  // リンク先に名前を渡す
+  if(userName) {
+    const url = link + "?name=" + encodeURIComponent(userName);
+    window.location.href = url;
+  } else {
+    window.location.href = link;
+  }
+}
+</script>
+
+</head>
+<body onload="setName()">
+
+<h1>此処で名前変換</h1>
+<p>名前：<span class="name-placeholder"></span></p>
+
+<h2>小説一覧</h2>
+<ul>
+  <li><a href="novel1.html" onclick="event.preventDefault(); goToNovel('novel1.html')">小説1</a></li>
+  <li><a href="novel2.html" onclick="event.preventDefault(); goToNovel('novel2.html')">小説2</a></li>
+  <li><a href="novel3.html" onclick="event.preventDefault(); goToNovel('novel3.html')">小説3</a></li>
+</ul>
+
+</body>
+</html>
