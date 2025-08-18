@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
   <!-- 検索避け -->
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="googlebot" content="noindex,nofollow,noarchive">
-
+  
   <style>
     body {
       font-family: "Hiragino Kaku Gothic Pro","Meiryo","sans-serif";
@@ -21,39 +21,27 @@
     }
     a { color: #008b8b; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    input, button { font-size: 1em; padding: 5px; }
-    p { margin: 0 0 1em 0; }
-    @media (max-width: 768px) {
-      body { font-size: 15px; line-height: 1.9; padding: 10px 12px 10px 18px; }
-    }
-    @media (max-width: 480px) {
-      body { font-size: 14px; line-height: 1.8; padding: 8px 8px 8px 14px; }
-    }
+    @media (max-width: 768px) { body { font-size: 15px; line-height: 1.9; padding: 10px 12px 10px 18px; } }
+    @media (max-width: 480px) { body { font-size: 14px; line-height: 1.8; padding: 8px 8px 8px 14px; } }
   </style>
 </head>
 <body>
-  <h1>小説タイトル</h1>
+  <h1>小説本文ページ</h1>
 
-  <section id="name-conversion">
-    <input type="text" id="userName" value="ラケール">
-    <button onclick="convertName()">変換</button>
-  </section>
-
-  <section id="novel-content">
-    <p>ある日のこと、<span class="charName">ラケール</span>は空を見上げて静かに微笑んだ。</p>
-    <p>「今日も平和だわ」と<span class="charName">ラケール</span>はつぶやく。</p>
-    <!-- ここに小説本文をどんどん追加 -->
+  <section id="novel-text">
+    <p id="para1">♡はとても美しい日差しの中で、<span id="name1"></span>と一緒に歩いた。</p>
+    <p id="para2"><span id="name1"></span>は少し照れながらも、笑顔を絶やさなかった。</p>
   </section>
 
   <p><a href="index.html">戻る</a></p>
 
   <script>
-    function convertName() {
-      const input = document.getElementById('userName').value;
-      if(input.trim() === "") return;
-      const nameSpans = document.querySelectorAll('.charName');
-      nameSpans.forEach(span => { span.textContent = input; });
-    }
+    // ローカルストレージから名前を取得
+    let storedName = localStorage.getItem('novelName');
+    if(!storedName) storedName = 'ラケール'; // デフォルト名
+
+    // 小説本文の所定箇所に名前を反映
+    document.querySelectorAll('#name1').forEach(el => el.textContent = storedName);
   </script>
 </body>
 </html>
