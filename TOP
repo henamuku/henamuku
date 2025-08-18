@@ -29,11 +29,10 @@
   </style>
 </head>
 <body>
-
-
-
-
-
+<br>
+<br>
+<br>
+<br>
   <section id="name-conversion">
     <input type="text" id="userName" value="ラケール">
     <button onclick="convertName()">変換</button>
@@ -46,7 +45,10 @@
       <li><a href="novel2.html">小説2</a></li>
     </ul>
   </section>
-
+<br>
+<br>
+<br>
+<br>
   <script>
     function convertName() {
       const input = document.getElementById('userName').value;
