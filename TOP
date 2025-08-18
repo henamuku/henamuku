@@ -35,10 +35,20 @@
 <br>
 <br>
 <br>
-<section id="name-conversion">
-    <input type="text" id="userName" value="ラケール">
-    <button onclick="convertName()">変換</button>
-    <span id="convertedName">ラケール</span>
+<section id="name-conversion"><input type="text" id="userName" value="ラケール">
+<button onclick="convertName()">変換</button>
+<span id="convertedName">ラケール</span>
+
+<script>
+  function convertName() {
+    const input = document.getElementById('userName').value;
+    if(input.trim() === "") return;
+
+    // ここでローカルストレージに保存する
+    localStorage.setItem('novelName', input);
+  }
+</script>
+
   </section>
 
   <section id="novel-links">
