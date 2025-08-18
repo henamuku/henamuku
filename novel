@@ -26,15 +26,16 @@
   </style>
 </head>
 <body>
-  <h1>小説本文ページ</h1>
-
+<br>
+<br>
   <section id="novel-text">
     <p id="para1">♡はとても美しい日差しの中で、<span id="name1"></span>と一緒に歩いた。</p>
     <p id="para2"><span id="name1"></span>は少し照れながらも、笑顔を絶やさなかった。</p>
   </section>
 
   <p><a href="index.html">戻る</a></p>
-
+ <br>
+ <br>
   <script>
     // ローカルストレージから名前を取得
     let storedName = localStorage.getItem('novelName');
