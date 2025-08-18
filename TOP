@@ -29,7 +29,6 @@
   </style>
 </head>
 <body>
-  <h1>夢小説ページ</h1>
 
   <section id="name-conversion">
     <input type="text" id="userName" value="ラケール">
