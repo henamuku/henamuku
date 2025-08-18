@@ -8,7 +8,6 @@
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="googlebot" content="noindex,nofollow,noarchive">
   
-  <!-- pixiv風読みやすさ・リンク色・レスポンシブ対応・余白・文字・行間調整 -->
   <style>
     body {
       font-family: "Hiragino Kaku Gothic Pro","Meiryo","sans-serif";
@@ -20,45 +19,35 @@
       line-height: 2;
       letter-spacing: 0.02em;
     }
-    p { margin: 0 0 1em 0; padding: 0; }
     a { color: #008b8b; text-decoration: none; }
     a:hover { text-decoration: underline; }
     img { max-width: 100%; height: auto; }
-    h2 { margin-top: 2em; }
     ul { padding-left: 1.5em; }
-    @media (max-width: 768px) {
-      body { font-size: 15px; line-height: 1.9; padding: 10px 12px 10px 18px; }
-    }
-    @media (max-width: 480px) {
-      body { font-size: 14px; line-height: 1.8; padding: 8px 8px 8px 14px; }
-    }
     input, button { font-size: 1em; padding: 5px; }
+    @media (max-width: 768px) { body { font-size: 15px; line-height: 1.9; padding: 10px 12px 10px 18px; } }
+    @media (max-width: 480px) { body { font-size: 14px; line-height: 1.8; padding: 8px 8px 8px 14px; } }
   </style>
 </head>
 <body>
+  <h1>夢小説ページ</h1>
 
   <section id="name-conversion">
-    <h2>名前変換</h2>
-    <input type="text" id="userName" placeholder="名前を入力">
+    <input type="text" id="userName" value="ラケール">
     <button onclick="convertName()">変換</button>
+    <span id="convertedName"></span>
+  </section>
 
   <section id="novel-links">
     <ul>
       <li><a href="novel1.html">小説1</a></li>
       <li><a href="novel2.html">小説2</a></li>
-      <!-- ここに小説ページのリンクを増やせます -->
     </ul>
   </section>
 
   <script>
     function convertName() {
       const input = document.getElementById('userName').value;
-      if(input.trim() === "") {
-        document.getElementById('convertedName').textContent = "名前を入力してね";
-        return;
-      }
-      // ここで変換ロジックを追加可能
-      const converted = input.replace(/♡/g, '♡'); // 現状は入力そのまま表示
+      const converted = input.replace(/♡/g, '♡'); // 必要に応じて変換ルール追加
       document.getElementById('convertedName').textContent = converted;
     }
   </script>
