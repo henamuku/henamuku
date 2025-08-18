@@ -36,18 +36,13 @@
   </style>
 </head>
 <body>
-  <h1>夢小説ページ</h1>
 
   <section id="name-conversion">
     <h2>名前変換</h2>
-    <p>好きな名前を入力して、物語内の登場人物名を変換できます。</p>
     <input type="text" id="userName" placeholder="名前を入力">
     <button onclick="convertName()">変換</button>
-    <p>変換後: <span id="convertedName">ここに表示</span></p>
-  </section>
 
   <section id="novel-links">
-    <h2>小説まとめページ</h2>
     <ul>
       <li><a href="novel1.html">小説1</a></li>
       <li><a href="novel2.html">小説2</a></li>
