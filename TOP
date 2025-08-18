@@ -48,6 +48,9 @@
 <br>
 <br>
 <br>
+<a href="https://example.com">戻る</a>
+<br>
+<br>
   <script>
     function convertName() {
       const input = document.getElementById('userName').value;
